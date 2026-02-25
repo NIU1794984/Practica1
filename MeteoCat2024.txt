@@ -1,0 +1,42 @@
+Alt Camp;Vila-rodona;287;16.4;22.3;11.6;37.4;1.7
+Alt Emporda;Roses;24;17.3;22.4;12.5;41.3;-2.1
+Alt Penedes;Vilafranca del Penedes-la Granada;240;16.0;22.1;10.9;38.1;-0.9
+Alt Urgell;la Seu d'Urgell-Bellestar;849;12.7;20.1;6.6;38.5;-7.0
+Alta Ribagorca;el Pont de Suert;823;10.9;20.0;4.1;37.3;-9.1
+Anoia;els Hostalets de Pierola;316;16.2;22.4;11.5;37.8;0.0
+Aran;Vielha - Eliport;1027;10.8;17.5;5.5;36.8;-8.6
+Bages;Sant Salvador de Guardiola;349;14.5;22.4;7.9;41.5;-6.1
+Baix Camp;Vinyols i els Arcs - Cambrils;29;17.4;22.4;12.3;34.4;-2.6
+Baix Ebre;el Perello;179;17.0;22.2;12.9;36.0;0.6
+Baix Emporda;la Bisbal d'Emporda;29;16.2;22.9;10.1;41.7;-5.0
+Baix Llobregat;el Prat de Llobregat;8;17.2;23.2;12.2;39.2;-0.2
+Baix Penedes;el Vendrell;59;17.0;23.0;11.5;36.6;-1.1
+Barcelones;Barcelona - el Raval;33;18.7;22.1;15.8;37.5;5.5
+Bergueda;la Quar;873;12.6;19.1;7.8;37.6;-4.0
+Cerdanya;Puigcerda;1213;10.6;17.8;4.7;35.7;-9.6
+Conca de Barbera;l'Espluga de Francol;15.0;21.1;9.5;39.2;-3.3
+Garraf;Canyelles;148;16.3;22.5;10.8;37.2;-0.8
+Garrigues;les Borges Blanques;283;15.4;21.9;8.9;39.6;-5.5
+Garrotxa;Olot;433;14.3;21.9;7.7;39.6;-6.7
+Girones;Girona;72;15.5;23.2;8.6;40.3;-7.2
+Maresme;Cabrils;81;17.0;21.5;12.9;35.4;0.9
+Moianes;Moia;735;14.3;19.1;9.5;36.0;-2.9
+Montsia;Amposta;3;17.7;22.1;13.7;32.4;2.4
+Noguera;Vallfogona de Balaguer;238;15.1;22.1;8.9;39.4;-5.4
+Osona;Vic;499;13.9;21.1;8.0;39.9;-6.5
+Pallars Jussa;Tremp;473;14.2;21.9;7.5;40.7;-6.8
+Pallars Sobira;Sort;679;12.8;20.8;6.4;37.6;-4.9
+Pla d'Urgell;Mollerussa;247;15.1;21.8;8.8;40.1;-5.1
+Pla de l'Estany;Banyoles;176;16.2;22.4;11.1;42.5;-1.9
+Priorat;Falset;359;16.0;22.0;11.1;38.5;-1.7
+Ribera d'Ebre;Vinebre;53;17.2;24.2;11.1;40.9;-4.2
+Ripolles;Sant Pau de Seg;852;11.3;18.5;5.5;35.4;-9.4
+Segarra;Cervera;554;14.3;20.2;9.2;39.2;-4.1
+Segria;Lleida - la Femosa;170;15.8;22.5;9.6;41.2;-3.2
+Selva;Angles;150;15.6;22.9;9.2;41.0;-5.2
+Solsones;Solsona;691;13.6;21.2;7.5;40.4;-5.6
+Tarragones;Tarragona - Complex Educatiu;5;17.9;22.7;13.3;34.5;0.3
+Terra Alta;Horta de Sant Joan;515;15.6;21.5;10.5;39.3;-2.5
+Urgell;Tarrega;427;15.3;21.5;10.1;40.8;-2.4
+Valles Occidental;Sabadell - Parc Agrari;258;15.9;22.0;10.2;39.0;-2.1
+Valles Oriental;Granollers;210;16.4;22.0;11.9;40.2;-0.8
