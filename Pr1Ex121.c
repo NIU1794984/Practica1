@@ -9,12 +9,17 @@ typedef struct {
   float tmtj, tmxm, tmnm, tmx, tmn;
 } MetCom;
 
+void maxmin(MetCom llista[], unsigned num_elements, float *t_max, float *t_min, unsigned *p_max, unsigned *p_min);
+void mitj_temperatures(MetCom llista[], unsigned num_elements, float *tm_max, float *tm_min);
+
 int main() {
   FILE *meteo;
   MetCom *comarca;
-  unsigned i = 0, numcom = 0, ll;
+  unsigned i = 0, numcom = 0, *p_min, *p_max;
+  int ll;
+  float *t_max, *t_min, *tm_max, *tm_min;
 
-  if ((meteo = fopen("MeteoCat2024.txt", "r")) == NULL) {
+  if ((meteo = fopen("./../MeteoCat2024.txt", "r")) == NULL) {
     printf("No es pot obrir el fitxer\n");
     return 1;
   }
@@ -57,5 +62,42 @@ int main() {
     printf("\n");
   }
 
+  printf("\n Ara intentare codi propi");
+  maxmin(comarca, numcom, t_max, t_min, p_max, p_min);
+  mitj_temperatures(comarca, numcom, tm_max, tm_min);
+
+  printf("La mitjana de temperatures maximes es: %.2f", *tm_max);
+  printf("La mitjana de temperatures minimes es: %.2f", *tm_min);
   return 0;
+}
+
+void mitj_temperatures(MetCom llista[], unsigned num_elements, float *tm_max, float *tm_min){
+  unsigned j;
+  int suma_max = 0;
+  int suma_min = 0;
+  for (j = 0; j < num_elements; j++){
+    suma_max += llista[j].tmx;
+    suma_min += llista[j].tmn;
+  }
+  *tm_max = (suma_max / num_elements);
+  *tm_min = (suma_min / num_elements);
+}
+
+
+void maxmin(MetCom llista[], unsigned num_elements, float *t_max, float *t_min, unsigned *p_max, unsigned *p_min){
+  unsigned j;
+  *t_min = llista[0].tmn;
+  *t_max = llista[0].tmx;
+  *p_min = *p_max = 0;
+  
+  for (j=0; j < num_elements; j++){
+    if (llista[j].tmn < *t_min){
+      *t_min = llista[j].tmn;
+      *p_min = j;
+    }
+    if (llista[j].tmx > *t_max){
+      *t_max = llista[j].tmx;
+      *p_max = j;
+    }
+  }
 }
