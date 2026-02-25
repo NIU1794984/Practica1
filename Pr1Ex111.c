@@ -1,4 +1,4 @@
-//
+// Marco Rondon, 1794984. Mario Roda, 1792216
 // Programa per a solucionar equacions polinomiques de segon grau.
 //
 #include <math.h>
@@ -11,6 +11,7 @@ int main() {
         while (getchar() != '\n') {}
         printf("Les dades no han entrat be....\nTorneu-hi...\n");
     }
+
     if ((fabs(a) < tol) && (fabs(b) < tol)){
         printf("Les dades introduides generen una equacio sense incognita.");
         return 1;

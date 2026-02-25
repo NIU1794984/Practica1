@@ -1,4 +1,4 @@
-//
+// Marco Rondon, 1794984. Mario Roda, 1792216
 // Programa per a solucionar equacions polinomiques de segon grau.
 //
 #include <math.h>
@@ -11,6 +11,7 @@ int main() {
         while (getchar() != '\n') {}
         printf("Les dades no han entrat be....\nTorneu-hi...\n");
     }
+
     if ((fabs(a) < tol) && (fabs(b) < tol)){
         printf("Les dades introduides generen una equacio sense incognita.");
         return 1;
@@ -25,7 +26,7 @@ int main() {
         if (discr < 0) {
             printf("\nEquacio amb solucions complexes\n");
             printf("(%g)*x^2+(%g)*x+(%g)=0\n", a, b, c);
-            printf("x1=%g + %gi, x2=%g - %gi\n\n", -b/(2*a), sqrt(4*a*c - b*b)/(2*a), -b/(2*a), sqrt(4*a*c - b*b)/(2*a));
+            printf("x1=%g %gi, x2=%g %gi\n\n", -b/(2*a), sqrt(4*a*c - b*b)/(2*a), -b/(2*a), -1*sqrt(4*a*c - b*b)/(2*a));
         } 
         else {
             if (discr < tol) {
