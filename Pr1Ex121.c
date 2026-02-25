@@ -1,3 +1,5 @@
+// Marco Rondón, 1794984. Mario Roda, 1792216
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

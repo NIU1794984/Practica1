@@ -1,4 +1,4 @@
-// Marco Rondon, 1794984. Mario Roda, 1792216
+// Marco Rondón, 1794984. Mario Roda, 1792216
 // Programa per a solucionar equacions polinomiques de segon grau.
 //
 #include <math.h>
