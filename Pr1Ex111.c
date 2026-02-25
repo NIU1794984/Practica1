@@ -21,7 +21,7 @@ int main() {
         printf("x= %g\n",-c / b);
     }
     else {
-        discr = b * b- 4 * a * c;
+        discr = b * b -4 * a * c;
         if (discr < 0) {
             printf("\nEquacio sense solucions reals\n");
             printf("(%g)*x^2+(%g)*x+(%g)=0\n", a, b, c);
@@ -33,7 +33,7 @@ int main() {
                 printf("(%g)*x^2+(%g)*x+(%g)=0\n", a, b, c);
                 printf("es\n");
                 printf("x=%g\n",-b / (2 * a));
-        }   
+            }   
             else {
                 sqrtdiscr = sqrt(discr);
                 printf("\nEquacio amb dues solucions.\n");
@@ -42,7 +42,7 @@ int main() {
                 printf("son\n");
                 printf("x=%g, x=%g\n\n", (-b + sqrtdiscr) / (2 * a),
                 (-b-sqrtdiscr) / (2 * a));
-        }
+            }
         }
     }
     return 0;
