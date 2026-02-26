@@ -17,11 +17,10 @@ void mitj_temperatures(MetCom llista[], unsigned num_elements, float *tm_max, fl
 int main() {
   FILE *meteo;
   MetCom *comarca;
-  unsigned i = 0, numcom = 0, numchar = 0, *p_min, *p_max;
+  unsigned i = 0, j = 0, numcom = 0, *p_min, *p_max;
   int ll;
   float *t_max, *t_min, *tm_max, *tm_min;
   char s[50];
-  unsigned j;
 
   if ((meteo = fopen("MeteoCat2024.txt", "r")) == NULL) {
     printf("No es pot obrir el fitxer\n");
@@ -41,25 +40,13 @@ int main() {
     printf("\nNo es possible assignar la memoria necessaria...\n\n");
     return 1;
   }
-
   for (i = 0; i < numcom; i++) {
-  /*
-    fscanf(meteo, "%50[a-zA-Z'. -];", s);
-    for (j = 0;j<50;j++){
-      if ((ll = s[j]) != 0) numchar++;
-    }
-    if ((comarca[i].nom = (char *)malloc(sizeof(char)*numchar)) == NULL) return 1;
-
-    strcpy(comarca[i].nom, &s[0]);
-    fscanf(meteo, "%50[a-zA-Z'. -];", s);
-    numchar = 0;
-    for (j = 0;j<50;j++){
-      if ((ll = s[j]) != 0) numchar++;
-    }
-    if ((comarca[i].estacio = (char *)malloc(sizeof(char)*numchar)) == NULL) return 1;
-
-    strcpy(comarca[i].estacio, &s[0]);
-    */
+    fscanf(meteo, "%49[a-zA-Z'. -];", s);
+    if ((comarca[i].nom = (char *)malloc(sizeof(char)*strlen(s) + 1)) == NULL) return 1;
+    strcpy(comarca[i].nom, s);
+    fscanf(meteo, "%49[a-zA-Z'. -];", s);
+    if ((comarca[i].estacio = (char *)malloc(sizeof(char)*strlen(s) + 1)) == NULL) return 1;
+    strcpy(comarca[i].estacio, s);
     fscanf(meteo, "%d;", &comarca[i].alt);
     fscanf(meteo, "%f;", &(comarca[i].tmtj));
     fscanf(meteo, "%f;", &(comarca[i].tmxm));
@@ -99,8 +86,9 @@ int main() {
   printf("\nLa mitjana de temperatures màximes (tm_max) és: %.2f °C\n", *tm_max);
   printf("La mitjana de temperatures mínimes (tm_min) és: %.2f °C\n\n", *tm_min);
 
-  printf("La comarca amb la temperatura màxima és %s amb una temperatura màxima de %.2f\n",comarca[*p_max], *t_max);
-  printf("La comarca amb la temperatura mínima és %s amb una temperatura mínima de %.2f\n",comarca[*p_min], *t_min);
+  printf("La comarca amb la temperatura màxima és %s amb una temperatura màxima de %.2f ºC\n",comarca[*p_max].nom, *t_max);
+  printf("La comarca amb la temperatura mínima és %s amb una temperatura mínima de %.2f ºC\n\n\n",comarca[*p_min].nom, *t_min);
+
   // alliberem els espais de memòria
   free(t_max);
   free(t_min);
@@ -108,11 +96,17 @@ int main() {
   free(tm_min);
   free(p_max);
   free(p_min);
+
+  for (i = 0; i < numcom; i++){
+    free(comarca[i].nom);
+    free(comarca[i].estacio);
+  }
   free(comarca);
   t_max = t_min = tm_max = tm_min = NULL;
   p_max = p_min = NULL;
   return 0;
 }
+
 // definim la funció per calcular la mitjana de temperatures màximes i mínimes
 void mitj_temperatures(MetCom llista[], unsigned num_elements, float *tm_max, float *tm_min){
   unsigned j;
