@@ -67,13 +67,13 @@ int main() {
 
   // codi propi
   // reserva de memòria
-  t_max = (float *)malloc(sizeof(float));
-  t_min = (float *)malloc(sizeof(float));
-  tm_max = (float *)malloc(sizeof(float));
-  tm_min = (float *)malloc(sizeof(float));
+  if ((t_max = (float *)malloc(sizeof(float))) == NULL) return 1;
+  if ((t_min = (float *)malloc(sizeof(float))) == NULL) return 1;
+  if ((tm_max = (float *)malloc(sizeof(float))) == NULL) return 1;
+  if ((tm_min = (float *)malloc(sizeof(float))) == NULL) return 1;
   
-  p_max = (unsigned *)malloc(sizeof(unsigned));
-  p_min = (unsigned *)malloc(sizeof(unsigned));
+  if ((p_max = (unsigned *)malloc(sizeof(unsigned))) == NULL) return 1;
+  if ((p_min = (unsigned *)malloc(sizeof(unsigned))) == NULL) return 1;
 
   // anunciem les funcions que utilitzarem
   maxmin(comarca, numcom, t_max, t_min, p_max, p_min);
@@ -81,6 +81,9 @@ int main() {
 
   printf("\nLa mitjana de temperatures màximes (tm_max) és: %.2f °C\n", *tm_max);
   printf("La mitjana de temperatures mínimes (tm_min) és: %.2f °C\n\n", *tm_min);
+
+  printf("La comarca amb la temperatura màxima és %s amb una temperatura màxima de %.2f\n",comarca[*p_max], *t_max);
+  printf("La comarca amb la temperatura mínima és %s amb una temperatura mínima de %.2f\n",comarca[*p_min], *t_min);
   // alliberem els espais de memòria
   free(t_max);
   free(t_min);
@@ -89,6 +92,8 @@ int main() {
   free(p_max);
   free(p_min);
   free(comarca);
+  t_max = t_min = tm_max = tm_min = NULL;
+  p_max = p_min = NULL;
   return 0;
 }
 // definim la funció per calcular la mitjana de temperatures màximes i mínimes
