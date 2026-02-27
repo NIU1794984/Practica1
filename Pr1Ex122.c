@@ -20,7 +20,7 @@ int main() {
   unsigned i = 0, j = 0, numcom = 0, *p_min, *p_max;
   int ll;
   float *t_max, *t_min, *tm_max, *tm_min;
-  char s[50];
+  char *s;
 
   if ((meteo = fopen("MeteoCat2024.txt", "r")) == NULL) {
     printf("No es pot obrir el fitxer\n");
@@ -37,6 +37,10 @@ int main() {
   rewind(meteo);
 
   if ((comarca = (MetCom *)malloc(numcom * sizeof(MetCom))) == NULL) {
+    printf("\nNo es possible assignar la memoria necessaria...\n\n");
+    return 1;
+  }
+  if ((s = (char *)malloc(50*sizeof(char))) == NULL){
     printf("\nNo es possible assignar la memoria necessaria...\n\n");
     return 1;
   }
@@ -96,6 +100,7 @@ int main() {
   free(tm_min);
   free(p_max);
   free(p_min);
+  free(s);
 
   for (i = 0; i < numcom; i++){
     free(comarca[i].nom);
