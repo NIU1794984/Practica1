@@ -46,6 +46,7 @@ int main() {
   }
   for (i = 0; i < numcom; i++) {
     fscanf(meteo, "%49[a-zA-Z'. -];", s);
+    // reservem l'espai estríctament necessari a memòria dels strings nom i estació 
     if ((comarca[i].nom = (char *)malloc(sizeof(char)*strlen(s) + 1)) == NULL) return 1;
     strcpy(comarca[i].nom, s);
     fscanf(meteo, "%49[a-zA-Z'. -];", s);
@@ -91,7 +92,7 @@ int main() {
   printf("La mitjana de temperatures mínimes (tm_min) és: %.2f °C\n\n", *tm_min);
 
   printf("La comarca amb la temperatura màxima és %s amb una temperatura màxima de %.2f ºC\n",comarca[*p_max].nom, *t_max);
-  printf("La comarca amb la temperatura mínima és %s amb una temperatura mínima de %.2f ºC\n\n\n",comarca[*p_min].nom, *t_min);
+  printf("La comarca amb la temperatura mínima és %s amb una temperatura mínima de %.2f ºC\n\n",comarca[*p_min].nom, *t_min);
 
   // alliberem els espais de memòria
   free(t_max);
@@ -133,7 +134,7 @@ void maxmin(MetCom llista[], unsigned num_elements, float *t_max, float *t_min, 
   *t_max = llista[0].tmx;
   *p_min = *p_max = 0;
   
-  for (j=0; j < num_elements; j++){
+  for (j=1; j < num_elements; j++){
     if (llista[j].tmn < *t_min){ // si la temperatura actual és menor que la mínima guardem aquesta com la nova mínima
       *t_min = llista[j].tmn;
       *p_min = j;

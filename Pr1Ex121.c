@@ -82,8 +82,8 @@ int main() {
   printf("\nLa mitjana de temperatures màximes (tm_max) és: %.2f °C\n", *tm_max);
   printf("La mitjana de temperatures mínimes (tm_min) és: %.2f °C\n\n", *tm_min);
 
-  printf("La comarca amb la temperatura màxima és %s amb una temperatura màxima de %.2f\n",comarca[*p_max], *t_max);
-  printf("La comarca amb la temperatura mínima és %s amb una temperatura mínima de %.2f\n",comarca[*p_min], *t_min);
+  printf("La comarca amb la temperatura màxima és %s amb una temperatura màxima de %.2f ºC\n",comarca[*p_max], *t_max);
+  printf("La comarca amb la temperatura mínima és %s amb una temperatura mínima de %.2f ºC\n\n",comarca[*p_min], *t_min);
   // alliberem els espais de memòria
   free(t_max);
   free(t_min);
@@ -117,7 +117,7 @@ void maxmin(MetCom llista[], unsigned num_elements, float *t_max, float *t_min, 
   *t_max = llista[0].tmx;
   *p_min = *p_max = 0;
   
-  for (j=0; j < num_elements; j++){
+  for (j=1; j < num_elements; j++){
     if (llista[j].tmn < *t_min){ // si la temperatura actual és menor que la mínima guardem aquesta com la nova mínima
       *t_min = llista[j].tmn;
       *p_min = j;
